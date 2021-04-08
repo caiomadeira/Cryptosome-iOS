@@ -16,19 +16,29 @@ class ViewController: UIViewController {
     var initialConstraints = [NSLayoutConstraint]()
     var logoConstraints = [NSLayoutConstraint]()
     
-//    // MARK: - IMAGES
-//    let logoImageName = "appImages/image.png"
-//    let imageLogo = UIImage(named: logoImageName)
-//    let ImageLogoView = UIImageView(image: ImageLogo!)
+    var chooseKeyLabel: UILabel{
+        let chooseKey = UILabel(frame: CGRect(x: 10, y: 10, width: 335, height: 100))
+        chooseKey.backgroundColor = UIColor.yellow
+        chooseKey.textAlignment = .center
+        chooseKey.text = "Entre com uma chave(de 1 a 255):"
+        
+        return chooseKey
+    }
     
-//
-//    let principalLogoImageView: UIImageView = {
-//        let logoImageView = UIImageView()
-//        logoImageView.image = UIImage(named: "appImages/image.png")
-//        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-//        return logoImageView
-//    }()
-//
+    var chooseKeyTextField: UITextField{
+        let chooseKeyTextField = UITextField(frame: CGRect(x: 10, y: 100, width: 335, height: 40))
+        chooseKeyTextField.backgroundColor = UIColor.green
+        chooseKeyTextField.textColor = .black
+        chooseKeyTextField.placeholder = "\tEx: 10"
+
+//        chooseKeyTextField.text = "Ex: 10"
+
+        return chooseKeyTextField
+    }
+    
+    
+    let chooseFile = UILabel()
+    let chooseSavelocation = UILabel()
     
     
     override func viewDidLoad() {
@@ -57,14 +67,14 @@ class ViewController: UIViewController {
         
         // MARK: ==========================================================================
         
-        let logoleadingConstraint = logoView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30)
+        let logoleadingConstraint = logoView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50)
         
-        let logotrailingConstraint = logoView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30)
+        let logotrailingConstraint = logoView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50)
         
         let logotopConstraint = logoView.topAnchor.constraint(equalTo:
-            self.view.topAnchor, constant: 100)
+            self.view.topAnchor, constant: 50)
         
-        let logobottomConstraint = logoView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -400)
+        let logobottomConstraint = logoView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -500)
         
         initialConstraints.append(contentsOf: [leadingConstraint, trailingConstraint, topConstraint, bottomConstraint, optionstopConstraint, optionsbottomConstraint, optionsleadingConstraint, optionstrailingConstraint])
         
@@ -81,7 +91,14 @@ class ViewController: UIViewController {
         
         optionView.backgroundColor = UIColor.red
         optionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        
+        
         self.view.addSubview(optionView)
+        self.optionView.addSubview(chooseKeyTextField)
+        self.optionView.addSubview(chooseKeyLabel)
+        
         
         
     }
