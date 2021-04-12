@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var logoConstraints = [NSLayoutConstraint]()
     
     var chooseKeyLabel: UILabel{
-        let chooseKey = UILabel(frame: CGRect(x: 10, y: 10, width: 335, height: 100))
+        let chooseKey = UILabel(frame: CGRect(x: 10, y: 10, width: 335, height: 50))
         chooseKey.backgroundColor = UIColor.yellow
         chooseKey.textAlignment = .center
         chooseKey.text = "Entre com uma chave(de 1 a 255):"
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     var chooseKeyTextField: UITextField{
-        let chooseKeyTextField = UITextField(frame: CGRect(x: 10, y: 100, width: 335, height: 40))
+        let chooseKeyTextField = UITextField(frame: CGRect(x: 10, y: 50, width: 335, height: 40))
         chooseKeyTextField.backgroundColor = UIColor.green
         chooseKeyTextField.textColor = .black
         chooseKeyTextField.placeholder = "\tEx: 10"
@@ -37,13 +37,62 @@ class ViewController: UIViewController {
     }
     
     
+    var chooseFileLabel: UILabel{
+        let chooseFile = UILabel(frame: CGRect(x: 10, y: 90, width: 335, height: 50))
+        chooseFile.backgroundColor = UIColor.yellow
+        chooseFile.textAlignment = .center
+        chooseFile.text = "Escolha o arquivo:"
+        
+        return chooseFile
+    }
+    
+    
+    var chooseFileButton: UIButton{
+        let chooseFileBtn = UIButton(frame: CGRect(x: 10, y: 140, width: 335, height: 50))
+        chooseFileBtn.backgroundColor = UIColor.black
+        chooseFileBtn.setTitle("Escolha", for: .normal)
+        chooseFileBtn.addTarget(self, action: #selector(chooseFileButtonClicked(_ :)), for: .touchUpInside)
+
+
+
+        return chooseFileBtn
+    }
+
+        
+    var chooseSaveFileLabel: UILabel{
+        let chooseSaveFile = UILabel(frame: CGRect(x: 10, y: 190, width: 335, height: 50))
+        chooseSaveFile.backgroundColor = UIColor.yellow
+        chooseSaveFile.textAlignment = .center
+        chooseSaveFile.text = "Escolha onde quer salvar:"
+        
+        return chooseSaveFile
+    }
+    
+    var chooseFileSaveButton: UIButton{
+        let chooseFileSaveBtn = UIButton(frame: CGRect(x: 10, y: 230, width: 335, height: 50))
+        chooseFileSaveBtn.backgroundColor = UIColor.black
+        chooseFileSaveBtn.setTitle("Salvar", for: .normal)
+        chooseFileSaveBtn.addTarget(self, action: #selector(chooseSaveButtonClicked(_ :)), for: .touchUpInside)
+
+        return chooseFileSaveBtn
+    }
+    
+    var cryptoButton: UIButton{
+        let cryptoBtn = UIButton(frame: CGRect(x: 10, y: 295, width: 335, height: 50))
+        cryptoBtn.backgroundColor = UIColor.black
+        cryptoBtn.setTitle("Criptografar", for: .normal)
+        cryptoBtn.addTarget(self, action: #selector(cryptoButtonClicked(_ :)), for: .touchUpInside)
+
+        return cryptoBtn
+    }
+    
     let chooseFile = UILabel()
     let chooseSavelocation = UILabel()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let leadingConstraint = backgroundView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
         let trailingConstraint = backgroundView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         let topConstraint = backgroundView.topAnchor.constraint(equalTo: self.view.topAnchor)
@@ -96,10 +145,13 @@ class ViewController: UIViewController {
         
         
         self.view.addSubview(optionView)
-        self.optionView.addSubview(chooseKeyTextField)
-        self.optionView.addSubview(chooseKeyLabel)
-        
-        
+        self.optionView.addSubview(chooseKeyTextField) // Type key
+        self.optionView.addSubview(chooseKeyLabel) // escolha uma chave
+        self.optionView.addSubview(chooseFileLabel) // escolha o arquivo
+        self.optionView.addSubview(chooseFileButton) // btn escolha o arquivo
+        self.optionView.addSubview(chooseSaveFileLabel) // escolha onde quuer salvar
+        self.optionView.addSubview(chooseFileSaveButton) // BTN escolha onde quuer salvar
+        self.optionView.addSubview(cryptoButton) // escolha onde quuer salvar
         
     }
     
@@ -121,5 +173,21 @@ class ViewController: UIViewController {
         
     }
     
+    // sender = obj who activate func
+    @objc func chooseFileButtonClicked(_ : UIButton){
+        print("Botao FILE pressionado")
+        
+    }
+    
+    @objc func chooseSaveButtonClicked(_ : UIButton){
+        print("Botao SAVE pressionado")
+        
+    }
+    
+    @objc func cryptoButtonClicked(_ : UIButton){
+        print("CRIPTOGRAFANDO...")
+        
+    }
 }
 
+    

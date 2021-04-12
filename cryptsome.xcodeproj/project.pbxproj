@@ -11,11 +11,14 @@
 		2F86F69F25F7B9F200AF0128 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86F69E25F7B9F200AF0128 /* SceneDelegate.swift */; };
 		2F86F6A125F7B9F200AF0128 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86F6A025F7B9F200AF0128 /* ViewController.swift */; };
 		2F86F6A425F7B9F200AF0128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F86F6A225F7B9F200AF0128 /* Main.storyboard */; };
-		2F86F6A925F7B9F400AF0128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F86F6A725F7B9F400AF0128 /* LaunchScreen.storyboard */; };
 		2F86F6B425F7B9F400AF0128 /* cryptsomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86F6B325F7B9F400AF0128 /* cryptsomeTests.swift */; };
 		2F86F6BF25F7B9F400AF0128 /* cryptsomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86F6BE25F7B9F400AF0128 /* cryptsomeUITests.swift */; };
 		2F86F6FE25F7CEBB00AF0128 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F86F6FD25F7CEBB00AF0128 /* Media.xcassets */; };
 		2F86F71E25F7E23C00AF0128 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86F71D25F7E23C00AF0128 /* Extensions.swift */; };
+		2FA9B41D2624365A000AEAD1 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9B41C2624365A000AEAD1 /* Crypto.swift */; };
+		2FA9B41E2624365A000AEAD1 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9B41C2624365A000AEAD1 /* Crypto.swift */; };
+		2FA9B41F2624365A000AEAD1 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9B41C2624365A000AEAD1 /* Crypto.swift */; };
+		2FA9B44126244515000AEAD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F86F6A725F7B9F400AF0128 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,8 @@
 		2F86F6C025F7B9F400AF0128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F86F6FD25F7CEBB00AF0128 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		2F86F71D25F7E23C00AF0128 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2FA9B41B262430BE000AEAD1 /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; };
+		2FA9B41C2624365A000AEAD1 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +106,13 @@
 		2F86F69B25F7B9F200AF0128 /* cryptsome */ = {
 			isa = PBXGroup;
 			children = (
+				2F86F6A225F7B9F200AF0128 /* Main.storyboard */,
+				2F86F6A725F7B9F400AF0128 /* LaunchScreen.storyboard */,
 				2F86F6E925F7CD5300AF0128 /* SupportingFiles */,
 				2F86F6D325F7BF8F00AF0128 /* Views */,
 				2F86F6D225F7BF7A00AF0128 /* Models */,
 				2F86F6D125F7BF6700AF0128 /* Controllers */,
+				2FA9B41B262430BE000AEAD1 /* NOTES.md */,
 			);
 			path = cryptsome;
 			sourceTree = "<group>";
@@ -141,8 +149,7 @@
 		2F86F6D225F7BF7A00AF0128 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2F86F6A225F7B9F200AF0128 /* Main.storyboard */,
-				2F86F6A725F7B9F400AF0128 /* LaunchScreen.storyboard */,
+				2FA9B41C2624365A000AEAD1 /* Crypto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,7 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F86F6A925F7B9F400AF0128 /* LaunchScreen.storyboard in Resources */,
+				2FA9B44126244515000AEAD1 /* LaunchScreen.storyboard in Resources */,
 				2F86F6FE25F7CEBB00AF0128 /* Media.xcassets in Resources */,
 				2F86F6A425F7B9F200AF0128 /* Main.storyboard in Resources */,
 			);
@@ -301,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FA9B41D2624365A000AEAD1 /* Crypto.swift in Sources */,
 				2F86F6A125F7B9F200AF0128 /* ViewController.swift in Sources */,
 				2F86F69D25F7B9F200AF0128 /* AppDelegate.swift in Sources */,
 				2F86F69F25F7B9F200AF0128 /* SceneDelegate.swift in Sources */,
@@ -313,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F86F6B425F7B9F400AF0128 /* cryptsomeTests.swift in Sources */,
+				2FA9B41E2624365A000AEAD1 /* Crypto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F86F6BF25F7B9F400AF0128 /* cryptsomeUITests.swift in Sources */,
+				2FA9B41F2624365A000AEAD1 /* Crypto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
