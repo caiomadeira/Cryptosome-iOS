@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import MobileCoreServices
+
 
 class ViewController: UIViewController {
     
@@ -177,17 +179,68 @@ class ViewController: UIViewController {
     @objc func chooseFileButtonClicked(_ : UIButton){
         print("Botao FILE pressionado")
         
+        let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePlainText as String], in: .import)
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        present(documentPicker, animated: true, completion: nil)
+        
+       
     }
     
     @objc func chooseSaveButtonClicked(_ : UIButton){
         print("Botao SAVE pressionado")
         
+        let file = "\(UUID().uuidString).txt"
+        let contents = "Texto"
+        
+        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = dir.appendingPathComponent(file)
+        print(fileURL)
+        
+        do {
+            try contents.write(to: fileURL, atomically: false, encoding: .utf8)
+            print("SALVO")
+        }
+        catch{
+            print("Error: \(error)")
+        }
     }
     
     @objc func cryptoButtonClicked(_ : UIButton){
         print("CRIPTOGRAFANDO...")
         
     }
+    
 }
 
+extension ViewController: UIDocumentPickerDelegate{
     
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        
+        guard let selectedFileURL = urls.first else {
+            return
+        }
+        
+        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        let sandboxFileURL = dir.appendingPathComponent(selectedFileURL.lastPathComponent)
+        
+        if FileManager.default.fileExists(atPath: sandboxFileURL.path){
+            print("arquiivo ja existe. [mostrar pop-up]")
+        }
+        else {
+            
+            do {
+                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
+                
+                print("arquivo copiado c/ sucesso")
+                
+            }
+            catch{
+                print("Erro: \(error)")
+            }
+        }
+        
+    }
+    
+}
